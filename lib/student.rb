@@ -13,14 +13,14 @@ attr_accessor :id, :name, :grade
 
   def self.all
     arry = DB[:conn].execute(
-    <<-SQL  SELECT * FROM students
+    <<-SQL SELECT * FROM students
     SQL
     )
     arry.collect do
       |row| self.new_from_db(row)
     end
     @@all
-    
+
   end
 
   def self.find_by_name(name)
