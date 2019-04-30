@@ -10,7 +10,7 @@ attr_accessor :id, :name, :grade
     @student.name = row[1]
     @student.grade = row[2]
     @@all << @student
-    
+
   end
 
   def self.all
