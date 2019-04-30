@@ -20,7 +20,7 @@ attr_accessor :id, :name, :grade
     arry.collect do
       |row| self.new_from_db(row)
     end
-    @@all
+    
 
   end
 
