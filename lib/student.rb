@@ -23,7 +23,7 @@ attr_accessor :id, :name, :grade
   end
 
   def self.find_by_name(name)
-    arry = DB[:conn].execute("SELECT id, name, grade FROM students WHERE name = ?", name)
+    arry = DB[:conn].execute("SELECT id, name, grade FROM students WHERE name = ? LIMIT 1", name)
     
 
     # find the student in the database given a name
