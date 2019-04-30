@@ -13,7 +13,7 @@ attr_accessor :id, :name, :grade
 
   def self.all
     arry = DB[:conn].execute(
-    SQL <<- SELECT * FROM students
+    <<-SQL  SELECT * FROM students
     SQL
     )
     arry.collect do
