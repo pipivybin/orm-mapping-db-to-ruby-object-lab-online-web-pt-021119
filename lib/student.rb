@@ -19,6 +19,7 @@ attr_accessor :id, :name, :grade
     arry.collect do
       |row| self.new_from_db(row)
     end
+    @@all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
   end
