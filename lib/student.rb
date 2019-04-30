@@ -9,8 +9,13 @@ class Student
   end
 
   def self.all
+    arry = DB[:conn].execute(
     SQL <<- SELECT * FROM students
-
+    SQL
+    )
+    arry.collect do
+      |row| self.new_from_db(row)
+    end
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
   end
