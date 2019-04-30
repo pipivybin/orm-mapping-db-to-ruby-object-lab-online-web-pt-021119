@@ -4,7 +4,7 @@ class Student
   def self.new_from_db(row)
     @student = self.new
     @student.name = row[1]
-    
+
   end
 
   def self.all
