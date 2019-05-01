@@ -44,7 +44,8 @@ def self.first_X_students_in_grade_10(x)
 end
 
 def self.first_student_in_grade_10
-  DB[:conn].execute("SELECT id, name, grade FROM students WHERE grade = 10 LIMIT 1").first
+  arry = DB[:conn].execute("SELECT id, name, grade FROM students WHERE grade = 10 LIMIT 1").first
+  self.new_from_db(arry)
 end
 
 def self.all_students_in_grade_X(x)
