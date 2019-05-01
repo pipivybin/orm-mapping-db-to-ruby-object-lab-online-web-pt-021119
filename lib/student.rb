@@ -24,7 +24,7 @@ attr_accessor :id, :name, :grade
 
   def self.find_by_name(name)
     arry = DB[:conn].execute("SELECT id, name, grade FROM students WHERE name = ? LIMIT 1", name).first
-
+    self.new_from_db(arry)
 
     # find the student in the database given a name
     # return a new instance of the Student class
