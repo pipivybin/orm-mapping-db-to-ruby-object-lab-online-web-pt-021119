@@ -33,7 +33,10 @@ end
 
 def self.students_below_12th_grade
   arry = DB[:conn].execute("SELECT id, name, grade FROM students WHERE grade < ?", 12)
-  self.new_from_db(arry)
+  arry.collect do
+    
+  end
+  
 end
 
 def self.first_X_students_in_grade_10(x)
