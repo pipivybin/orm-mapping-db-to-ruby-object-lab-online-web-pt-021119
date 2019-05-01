@@ -36,7 +36,7 @@ def self.students_below_12th_grade
   arry.collect do
     
   end
-  
+
 end
 
 def self.first_X_students_in_grade_10(x)
