@@ -40,7 +40,7 @@ def self.first_X_students_in_grade_10(x)
 end
 
 def self.all_students_in_grade_X(x)
-
+  DB[:conn].execute("SELECT id, name, grade FROM students WHERE grade = ?", x)
 end
 
   def save
