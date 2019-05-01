@@ -28,7 +28,7 @@ attr_accessor :id, :name, :grade
   end
 
 def self.all_students_in_grade_9
-
+  DB[:conn].execute("SELECT id, name, grade FROM students WHERE grade = ? LIMIT 1", 9)
 end
 
 def self.students_below_12th_grade
